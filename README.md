@@ -2,7 +2,7 @@
 
 This repository hosts the public privacy policy for the [Kraken Guard](https://github.com/cgraham1985/krakenguard-backend) browser extension, published via GitHub Pages.
 
-**Live page:** https://cgraham1985.github.io/krakenguard-privacy
+**Live page:** https://krakenguardextension.github.io/krakenguard-privacy/
 
 This URL is used as the privacy policy link in Kraken Guard's Chrome Web Store listing.
 
