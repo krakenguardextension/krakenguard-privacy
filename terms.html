@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms and Conditions — Kraken Guard</title>
+<meta name="description" content="Terms and Conditions for the Kraken Guard browser extension.">
+<style>
+  :root {
+    --bg: #0a2e2e;
+    --surface: #0f3d3d;
+    --border: #1c4f4f;
+    --heading: #00e5cc;
+    --heading-dim: #00a691;
+    --text: rgba(255,255,255,0.92);
+    --text-body: rgba(255,255,255,0.87);
+    --muted: #8fb8b3;
+    --focus: #00e5cc;
+    --font-sans: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "Cascadia Code", "SF Mono", Consolas, "Liberation Mono", monospace;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-body);
+    font-family: var(--font-sans);
+    font-size: clamp(15px, 1.5vw, 17px);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--heading); text-decoration-color: var(--heading-dim); text-underline-offset: 2px; }
+  a:hover { text-decoration-color: var(--heading); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 1.5rem 2rem;
+  }
+
+  .header-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .mark {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    margin-top: 0.2rem;
+  }
+
+  .header-text h1 {
+    margin: 0 0 0.35rem;
+    font-size: clamp(1.5rem, 4vw, 1.9rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--heading);
+    text-wrap: balance;
+  }
+
+  .updated {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  .lede {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin: 0 0 2.5rem;
+  }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin: 0 0 3rem;
+  }
+
+  nav.toc h2 {
+    margin: 0 0 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  nav.toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+
+  nav.toc li { break-inside: avoid; margin-bottom: 0.5rem; }
+  nav.toc a { color: var(--text-body); text-decoration: none; font-size: 0.92rem; }
+  nav.toc a:hover { color: var(--heading); }
+
+  section {
+    margin-bottom: 2.75rem;
+    scroll-margin-top: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section p { margin: 0 0 1rem; }
+  section p:last-child { margin-bottom: 0; }
+
+  section ul {
+    margin: 0 0 1rem;
+    padding-left: 1.3rem;
+  }
+  section ul:last-child { margin-bottom: 0; }
+  section li { margin-bottom: 0.5rem; }
+  section li:last-child { margin-bottom: 0; }
+
+  .email, code.email {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+  }
+
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--heading);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin: 0 0 1rem;
+  }
+  .callout p { margin: 0; }
+  .callout:last-child { margin-bottom: 0; }
+
+  .plan-name {
+    font-family: var(--font-mono);
+    color: var(--heading);
+    font-weight: 700;
+  }
+
+  footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--muted); }
+  footer .footer-links { margin-top: 0.5rem; }
+  footer .footer-links a { color: var(--heading); }
+
+  @media (max-width: 480px) {
+    nav.toc ol { columns: 1; }
+  }
+
+  @media print {
+    body { background: #fff; color: #111; }
+    .site-header, nav.toc { background: #fff; border-color: #ccc; }
+    section h2, .header-text h1 { color: #006e5f; }
+    a { color: #006e5f; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20 4 L34 11 V21 C34 29 28 35 20 37 C12 35 6 29 6 21 V11 Z"
+            stroke="#00e5cc" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M14 19 L18 23 L26 15" stroke="#00e5cc" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="header-text">
+      <h1>Kraken Guard — Terms and Conditions</h1>
+      <p class="updated">Last updated: 7 August 2026</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="lede">These Terms and Conditions govern your use of the Kraken Guard browser extension and associated services. Please read them before installing or using Kraken Guard.</p>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#about">1. About Kraken Guard</a></li>
+      <li><a href="#service">2. The service and its limitations</a></li>
+      <li><a href="#eligibility">3. Eligibility</a></li>
+      <li><a href="#plans">4. Subscription plans</a></li>
+      <li><a href="#billing">5. Payment and billing</a></li>
+      <li><a href="#refunds">6. 7-day refund policy</a></li>
+      <li><a href="#cancellation">7. Cancellation policy</a></li>
+      <li><a href="#acceptable-use">8. Acceptable use</a></li>
+      <li><a href="#ip">9. Intellectual property</a></li>
+      <li><a href="#disclaimer">10. Disclaimer</a></li>
+      <li><a href="#liability">11. Limitation of liability</a></li>
+      <li><a href="#privacy">12. Privacy policy</a></li>
+      <li><a href="#changes">13. Changes to these terms</a></li>
+      <li><a href="#law">14. Governing law</a></li>
+      <li><a href="#contact">15. Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="about">
+    <h2>1. About Kraken Guard</h2>
+    <p>Kraken Guard is a browser extension developed and operated by Chris Graham, trading as Kraken Guard, a sole trader based in the United Kingdom ("we", "us", "our"). These Terms and Conditions ("Terms") govern your use of the Kraken Guard browser extension and associated services (the "Service"). By installing or using Kraken Guard, you agree to be bound by these Terms. If you do not agree, please do not install or use the Service.</p>
+  </section>
+
+  <section id="service">
+    <h2>2. The service and its limitations</h2>
+    <p>Kraken Guard lets you filter content on supported social media platforms — currently YouTube, TikTok, Reddit and X/Twitter — by blocking accounts and keywords you choose. The Service relies on the structure of these third-party websites, which may change at any time without notice.</p>
+    <p>We do not guarantee that filtering will be 100% accurate, that it will catch every instance of blocked content, or that it will keep working without interruption if a supported platform changes its site in a way that breaks compatibility. We aim to maintain compatibility but cannot guarantee uninterrupted or error-free operation.</p>
+  </section>
+
+  <section id="eligibility">
+    <h2>3. Eligibility</h2>
+    <p>You must be at least 13 years old to use Kraken Guard. By using the Service, you confirm that you meet this age requirement. If we become aware that an account belongs to someone under 13, we will delete it in line with our Privacy Policy.</p>
+  </section>
+
+  <section id="plans">
+    <h2>4. Subscription plans</h2>
+    <p>Kraken Guard is offered on three plans:</p>
+    <ul>
+      <li><span class="plan-name">Free</span> — filtering on one social media platform, 20 shared blocklist entries, no community suggestions</li>
+      <li><span class="plan-name">Pro</span> (£3.99/month) — filtering on all 4 supported platforms, 30 blocked accounts and 30 blocked keywords per platform, no community suggestions</li>
+      <li><span class="plan-name">Pro+</span> (£8.99/month) — filtering on all 4 supported platforms, unlimited blocked accounts and keywords, community suggestions included</li>
+    </ul>
+    <p>Plan features and pricing may change from time to time. We will give reasonable notice before any price increase applies to an existing subscription.</p>
+  </section>
+
+  <section id="billing">
+    <h2>5. Payment and billing</h2>
+    <p>Paid subscriptions (Pro and Pro+) are billed monthly in advance and processed securely by Stripe. We do not store or have access to your payment card details — this is handled entirely by Stripe under their own terms and privacy policy. Your subscription renews automatically each month until you cancel.</p>
+  </section>
+
+  <section id="refunds">
+    <h2>6. 7-day refund policy</h2>
+    <div class="callout">
+      <p>If you're not satisfied with a paid subscription, you can request a full refund within 7 days of your initial payment by emailing us at the address below. Refund requests made after this 7-day window are considered on a case-by-case basis at our discretion. This policy is offered in addition to, and does not affect, any statutory rights you may have as a consumer.</p>
+    </div>
+  </section>
+
+  <section id="cancellation">
+    <h2>7. Cancellation policy</h2>
+    <p>You can cancel your subscription at any time from within the extension or by contacting us directly. Cancelling stops future billing but doesn't automatically refund any payment already taken for the current billing period — you'll keep access to paid features until the end of the period you've already paid for, after which your account reverts to the Free plan.</p>
+  </section>
+
+  <section id="acceptable-use">
+    <h2>8. Acceptable use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use Kraken Guard for any unlawful purpose</li>
+      <li>Reverse engineer, decompile or interfere with the Service beyond what's permitted by applicable law</li>
+      <li>Attempt to gain unauthorised access to our servers, other users' accounts, or any part of the Service</li>
+      <li>Use the Service in a way that could damage, disable or impair its operation for other users</li>
+    </ul>
+    <p>We reserve the right to suspend or terminate accounts we reasonably believe are being used in violation of these Terms.</p>
+  </section>
+
+  <section id="ip">
+    <h2>9. Intellectual property</h2>
+    <p>Kraken Guard, including its name, logo, design and underlying code, is the property of Chris Graham trading as Kraken Guard, except where third-party open-source components are used under their own licences. You may not copy, modify, distribute or create derivative works of Kraken Guard without our prior written permission.</p>
+  </section>
+
+  <section id="disclaimer">
+    <h2>10. Disclaimer</h2>
+    <p>Kraken Guard is provided "as is" and "as available," without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the Service will be uninterrupted, secure or error-free.</p>
+  </section>
+
+  <section id="liability">
+    <h2>11. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Chris Graham trading as Kraken Guard is not liable for any indirect, incidental, special or consequential damages arising from your use of, or inability to use, the Service. Our total liability to you for any claim arising from these Terms or the Service will not exceed the amount you paid us in the 12 months preceding the claim.</p>
+    <p>Nothing in these Terms excludes or limits liability that cannot lawfully be excluded or limited, including liability for death or personal injury caused by negligence, or fraud.</p>
+  </section>
+
+  <section id="privacy">
+    <h2>12. Privacy policy</h2>
+    <p>Our collection and use of your personal data is described in our <a href="index.html">Privacy Policy</a>, which forms part of these Terms by reference.</p>
+  </section>
+
+  <section id="changes">
+    <h2>13. Changes to these terms</h2>
+    <p>We may update these Terms from time to time. We'll notify users of any significant changes by updating the date at the top of this page. Continued use of the Service after changes take effect means you accept the updated Terms.</p>
+  </section>
+
+  <section id="law">
+    <h2>14. Governing law</h2>
+    <p>These Terms are governed by the laws of England and Wales. Any disputes arising from these Terms or your use of the Service are subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+  </section>
+
+  <section id="contact">
+    <h2>15. Contact</h2>
+    <p>If you have any questions about these Terms please contact us at:</p>
+    <p>Email: <a class="email" href="mailto:krakenguardextension@gmail.com">krakenguardextension@gmail.com</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Kraken Guard. These Terms apply to the Kraken Guard browser extension and its associated services.</p>
+  <p class="footer-links"><a href="index.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
